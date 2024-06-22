@@ -7,3 +7,4 @@ soundfile
 torch
 openai-whisper
 python-dotenv
+langchain_community
