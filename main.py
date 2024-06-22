@@ -9,7 +9,7 @@ load_dotenv()
 
 recognizer = sr.Recognizer()
 
-def listenandrecognize():
+def listen_and_recognize():
     with sr.Microphone() as source:
         print("Listening...")
         audio = recognizer.listen(source)
@@ -45,7 +45,7 @@ conversation_history.append({
 def main():
     while True:
         # Record audio
-        user_input = listenandrecognize()
+        user_input = listen_and_recognize()
 
         # ajout des actions ici, par exemple si danse alors on fait danser le robot
 
