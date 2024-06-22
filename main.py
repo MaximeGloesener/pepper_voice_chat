@@ -24,7 +24,6 @@ def listenandrecognize():
 def generate_response(prompt, history):
     history.append({"role": "user", "content": prompt})
     response = ollama.chat(model="gemma:2b", messages=history)
-    # print('Response:', response)
     history.append({"role": "assistant", "content": response["message"]["content"]})
     return response
 
