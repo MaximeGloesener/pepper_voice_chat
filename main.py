@@ -2,6 +2,10 @@ import ollama
 import speech_recognition as sr
 import sounddevice 
 
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 recognizer = sr.Recognizer()
 
@@ -23,7 +27,7 @@ def listenandrecognize():
 # Function to generate a response using Ollama model
 def generate_response(prompt, history):
     history.append({"role": "user", "content": prompt})
-    response = ollama.chat(model="gemma:2b", messages=history)
+    response = ollama.chat(model=os.getenv("MODEL"), messages=history)
     history.append({"role": "assistant", "content": response["message"]["content"]})
     return response
 

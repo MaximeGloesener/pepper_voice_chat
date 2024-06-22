@@ -1,0 +1,9 @@
+ollama
+SpeechRecognition
+sounddevice
+pyaudio 
+numpy
+soundfile
+torch
+openai-whisper
+python-dotenv
