@@ -8,3 +8,5 @@ torch
 openai-whisper
 python-dotenv
 langchain_community
+playwright
+beautifulsoup4
