@@ -1,10 +1,7 @@
-import pyaudio
-import wave
-import whisper
-import time
 import ollama 
-import sounddevice
 import speech_recognition as sr
+import sounddevice 
+
 
 recognizer = sr.Recognizer()
 
@@ -14,8 +11,8 @@ def listenandrecognize():
         audio = recognizer.listen(source)
 
     try:
-        text = recognizer.recognize_google(audio, language="fr-FR")
-        # text = recognizer.recognize_whisper(audio)
+        # text = recognizer.recognize_google(audio)
+        text = recognizer.recognize_whisper(audio)
         print("You said:", text)
         return text
     except sr.UnknownValueError:
@@ -47,11 +44,13 @@ def main():
         # Record audio
         user_input = listenandrecognize()
 
+        # ajout des actions ici, par exemple si danse alors on fait danser le robot
+
         if user_input:
             # Generate a response using LLM with history
             response = generate_response(user_input, conversation_history)
             print("NAO: ", response["message"]["content"])
-        
+            # TTS response using connection to robot 
 
 if __name__ == "__main__":
     main()
