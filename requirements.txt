@@ -10,3 +10,11 @@ python-dotenv
 langchain_community
 playwright
 beautifulsoup4
+
+langchain 
+langchain-community 
+langchainhub 
+langchain-openai 
+chromadb 
+bs4
+faiss-cpu
